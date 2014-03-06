@@ -8,6 +8,7 @@ import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlElement;
 
 import br.com.sramos.webservice.model.Marca;
+import br.com.sramos.webservice.model.Modelo;
 
 @WebService
 public interface MontadoraWS {
@@ -20,4 +21,10 @@ public interface MontadoraWS {
 	
 	@WebMethod
 	public Collection<Marca> buscarTodasMarcas();
+	
+	@WebMethod
+	public Collection<Modelo> buscarTodosModelos();
+	
+	@WebMethod
+	public Modelo buscarModeloPorId(@XmlElement(required=true) @WebParam(name="idModelo") Long idModelo);
 }
